@@ -1,4 +1,4 @@
-SET(CPP_SOURCE_WIX_DIR ${CMAKE_SOURCE_DIR}/wininstall)
+SET(CPP_SOURCE_WIX_DIR ${CMAKE_CURRENT_SOURCE_DIR}/wininstall)
 
 # Get revision number
 IF(WITH_REVNO)
@@ -51,8 +51,8 @@ ELSE()
   SET(GUID_COMPATINCLUDES "95AA0630-3A73-4efa-A314-7F287824748D")
 ENDIF()
 
-CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/wininstall/mariadb_conncpp.xml.in
-               ${CMAKE_BINARY_DIR}/wininstall/mariadb_conncpp.xml)
+CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mariadb_conncpp.xml.in
+               ${CMAKE_CURRENT_BINARY_DIR}/mariadb_conncpp.xml)
 IF(${revno})
   SET(MSI_PACKAGE "mariadb-connector-cpp-${PRODUCT_VERSION}-r${revno}-${PLATFORM}.msi")
 ELSE()

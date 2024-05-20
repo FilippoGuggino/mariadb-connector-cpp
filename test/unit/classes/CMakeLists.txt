@@ -40,7 +40,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_connection ${test_connection_sources})
 SET_TARGET_PROPERTIES(test_connection PROPERTIES
           OUTPUT_NAME "connection"
-	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 		  
@@ -65,7 +65,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_databasemetadata ${test_databasemetadata_sources})
 SET_TARGET_PROPERTIES(test_databasemetadata PROPERTIES
           OUTPUT_NAME "databasemetadata"
-	  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 
@@ -86,7 +86,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_resultsetmetadata ${test_resultsetmetadata_sources})
 SET_TARGET_PROPERTIES(test_resultsetmetadata PROPERTIES
           OUTPUT_NAME "resultsetmetadata"
-	  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 
@@ -107,7 +107,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_resultset ${test_resultset_sources})
 SET_TARGET_PROPERTIES(test_resultset PROPERTIES
           OUTPUT_NAME "resultset"
-	  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 TARGET_LINK_LIBRARIES(test_resultset ${PLATFORM_DEPENDENCIES} test_framework ${LIBRARY_NAME} ${MY_GCOV_LINK_LIBRARIES})
@@ -127,7 +127,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_savepoint ${test_savepoint_sources})
 SET_TARGET_PROPERTIES(test_savepoint PROPERTIES
           OUTPUT_NAME "savepoint"
-	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 TARGET_LINK_LIBRARIES(test_savepoint ${PLATFORM_DEPENDENCIES} test_framework ${LIBRARY_NAME} ${MY_GCOV_LINK_LIBRARIES})
@@ -147,7 +147,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_preparedstatement ${test_preparedstatement_sources})
 SET_TARGET_PROPERTIES(test_preparedstatement PROPERTIES
           OUTPUT_NAME "preparedstatement"
-	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 
@@ -168,7 +168,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_parametermetadata ${test_parametermetadata_sources})
 SET_TARGET_PROPERTIES(test_parametermetadata PROPERTIES
           OUTPUT_NAME "parametermetadata"
-	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 
@@ -210,7 +210,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(test_statement ${test_statement_sources})
 SET_TARGET_PROPERTIES(test_statement PROPERTIES
           OUTPUT_NAME "statement"
-	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test"
+	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test"
           LINK_FLAGS "${MYSQLCPPCONN_LINK_FLAGS_ENV} ${MYSQL_LINK_FLAGS}"
           COMPILE_FLAGS "${MYSQLCPPCONN_COMPILE_FLAGS_ENV}")
 TARGET_LINK_LIBRARIES(test_statement ${PLATFORM_DEPENDENCIES} test_framework ${LIBRARY_NAME} ${MY_GCOV_LINK_LIBRARIES})
@@ -219,14 +219,14 @@ MESSAGE(STATUS "Configuring unit tests - statement")
 
 SET(test_uri_sources
   ${test_common_sources}
-  "${CMAKE_SOURCE_DIR}/driver/mysql_uri.cpp"
-  "${CMAKE_SOURCE_DIR}/driver/mysql_util.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/driver/mysql_uri.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/driver/mysql_util.cpp"
   uri.cpp)
 
 IF(WIN32)
   SET(test_uri_sources
         ${test_uri_sources}
-    "${CMAKE_SOURCE_DIR}/driver/mysql_uri.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/driver/mysql_uri.h"
     uri.h)
 ENDIF(WIN32)
 

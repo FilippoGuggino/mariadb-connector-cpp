@@ -91,11 +91,11 @@ ENDIF()
 
 IF(PKG)
   SET(CPACK_GENERATOR "productbuild")
-  CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/cmake/resources/macos/WELCOME.html.in
-                 ${CMAKE_BINARY_DIR}/cmake/resources/macos/WELCOME.html @ONLY)
-  SET(CPACK_RESOURCE_FILE_WELCOME "${CMAKE_BINARY_DIR}/cmake/resources/macos/WELCOME.html")
-  SET(CPACK_RESOURCE_FILE_README  "${CMAKE_SOURCE_DIR}/cmake/resources/macos/README.html")
-  SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/cmake/resources/macos/LICENSE.html")
+  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/resources/macos/WELCOME.html.in
+                 ${CMAKE_CURRENT_BINARY_DIR}/cmake/resources/macos/WELCOME.html @ONLY)
+  SET(CPACK_RESOURCE_FILE_WELCOME "${CMAKE_CURRENT_BINARY_DIR}/cmake/resources/macos/WELCOME.html")
+  SET(CPACK_RESOURCE_FILE_README  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/resources/macos/README.html")
+  SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/cmake/resources/macos/LICENSE.html")
 
   SET(CPACK_PRODUCTBUILD_IDENTIFIER "com.mariadb.connector.cpp")
 

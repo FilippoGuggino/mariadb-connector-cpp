@@ -41,7 +41,7 @@ ENDIF(WIN32)
 ADD_EXECUTABLE(unsorted_bugs ${bugs_sources})
 SET_TARGET_PROPERTIES(unsorted_bugs PROPERTIES
           OUTPUT_NAME "unsorted_bugs"
-	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/test")
+	        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/test")
 TARGET_LINK_LIBRARIES(unsorted_bugs ${PLATFORM_DEPENDENCIES} test_framework ${LIBRARY_NAME} ${MY_GCOV_LINK_LIBRARIES})
 
 MESSAGE(STATUS "Configuring bugs test cases - unsorted")
