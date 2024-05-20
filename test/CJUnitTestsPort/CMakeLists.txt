@@ -28,7 +28,11 @@
 # 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA
 
 IF(WIN32)
-  LINK_DIRECTORIES(../framework/$(ConfigurationName))
+    IF(${CMAKE_GENERATOR} STREQUAL "Ninja")
+        LINK_DIRECTORIES(../framework)
+    ELSE()
+        LINK_DIRECTORIES(../framework/$(ConfigurationName))
+    ENDIF()
 ENDIF()
 SET(MY_TARGET_LINK_LIBRARIES test_framework ${LIBRARY_NAME})
 
